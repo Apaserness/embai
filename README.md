@@ -15,22 +15,6 @@ training/
     tune_threshold.py # F1-based sweep of the detection threshold on held-out data
 ```
 
-## How to reproduce
-
-1. Download all 24 `.npz` acquisition windows from the HAEEAI Hugging Face
-   dataset into `data/`.
-2. Train and export the INT8 model:
-   `python training/train.py --data-dir data/ --out submission/model.tflite`
-3. Tune the detection threshold on the held-out windows and copy the best value
-   into `DETECT_THRESHOLD` in `submission/code.py`:
-   `python training/tune_threshold.py --data-dir data/ --model submission/model.tflite`
-4. Run the official checks before every push:
-   ```
-   python submission/code.py --input-path evaluation/example/input_test.npy --output-path evaluation/example/my_output.jsonl
-   python evaluation/evaluate_performance.py --gt-path evaluation/example/output_test.jsonl --pred-path evaluation/example/my_output.jsonl
-   python evaluation/evaluate_constraint.py --model-path submission/model.tflite
-   ```
-
 ## Approach
 
 **Preprocessing.** The complex CIR is reduced to magnitude and reshaped to an
