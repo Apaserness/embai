@@ -33,7 +33,7 @@ CELL = 0.4                         # cell size in metres
 N_RADARS, N_ANT, N_BINS = 6, 3, 120
 IN_ROWS = N_RADARS * N_ANT         # 18 "rows" (radar x antenna)
 
-DETECT_THRESHOLD = 0.35            # heatmap peak threshold (tuned on validation)
+DETECT_THRESHOLD = 0.65            # heatmap peak threshold (tuned on validation)
 MAX_PEOPLE = 4
 TEMPORAL_WIN = 5                   # moving-average window over heatmaps (frames)
 CLUTTER_ALPHA = 0.02               # EMA coefficient for adaptive clutter estimate
