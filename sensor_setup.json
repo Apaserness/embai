@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Multi-Radar Multi-Antenna CIR People Tracking",
+  "fps": 25,
+
+  "num_radars": 6,
+  "num_antennas_per_radar": 3,
+  "cir_bins": 120,
+  "iq_representation": "last dimension = [I, Q]",
+
+  "radar_order": ["SR250_1", "SR250_2", "SR250_3", "SR250_4", "SR250_5", "SR250_6"],
+  "antenna_order": ["rx0", "rx1", "rx2"],
+
+  "radar_positions_xyz_m": {
+    "SR250_1": [2.4, 0.0, 1.2],
+    "SR250_2": [4.8, 1.8, 1.2],
+    "SR250_3": [4.8, 5.4, 1.2],
+    "SR250_4": [2.4, 7.2, 1.2],
+    "SR250_5": [0.0, 5.4, 1.2],
+    "SR250_6": [0.0, 1.8, 1.2]
+  },
+
+  "coordinate_system": {
+    "origin": "bottom_left_corner_room",
+    "x_axis": "horizontal_positive_right",
+    "y_axis": "vertical_positive_up"
+  },
+
+  "max_people": 4,
+  "people_representation": "zero padded with mask",
+  "position_units": "meters"
+}
